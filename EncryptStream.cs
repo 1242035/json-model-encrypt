@@ -20,10 +20,9 @@ namespace Com.Viauco.JsonOrm
                 algo.Padding = PaddingMode.None;
                 using (CryptoStream stream = new CryptoStream(input, algo.CreateDecryptor(key, iv), CryptoStreamMode.Read))
                 {
-                    
                     StreamReader reader = new StreamReader(stream);
                     data = reader.ReadToEnd();
-
+                    
                     reader.Close();
                     stream.Close();
                 }
